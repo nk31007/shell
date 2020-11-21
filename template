@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 read -p "Please Enter The text file:" FILENAME
 echo "#!/usr/bin/env bash" >>$FILENAME
 echo "#Purpose: Here Document Example" >>$FILENAME
