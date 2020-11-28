@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 read -p "Please Enter The text file:" FILENAME
-echo "#!/usr/bin/env bash" >>$FILENAME
-echo "#Purpose: Here Document Example" >>$FILENAME
-echo "#Version: 1.0" >>$FILENAME
-echo -en "#Created Date: $(date)" >>$FILENAME
-echo "#Modified Date:"  >>$FILENAME
-echo "#Website: http://nag.co.in" >>$FILENAME
-echo "#Author: Nageswara Rao" >>$FILENAME
-echo "#START#" >>$FILENAME
-echo "#END#" >>$FILENAME
-
+cat << EOF > $FILENAME
+ #!/usr/bin/env bash
+ #Purpose: Here Document Exaple
+ #Version: 1.0
+ #Created Date: $(date)
+ #Modified Date:
+ #Website: http://nag.co.in
+ #Author: Nageswara Rao
+ usage() {
+ echo "$FILENAME ARG1 OPER ARG2"
+ }
+ usage
+ #START#
+ #END#
+EOF
